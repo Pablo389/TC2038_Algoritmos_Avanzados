@@ -1,15 +1,16 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 
-void merge(vector<int> &A, int p, int q, int r){
+void merge(vector<double> &A, int p, int q, int r){
 
     const int n1 = q-p+1;
     const int n2 = r-q;
 
-    int* L = new int[n1];
-    int* R = new int[n2];
+    double* L = new double[n1];
+    double* R = new double[n2];
 
 
     for (int i = 0;i<n1;i++){
@@ -49,7 +50,7 @@ void merge(vector<int> &A, int p, int q, int r){
 
 }
 
-void mergeSort(vector<int> &A, int p, int r){
+void mergeSort(vector<double> &A, int p, int r){
 
     if (p>=r){
         return;
@@ -64,16 +65,39 @@ void mergeSort(vector<int> &A, int p, int r){
 
 
 int main(){
+    //comando para compilar: g++ mergeSort.cpp -o a.out
+    //comando para ejecutar: ./a.out o ./a.out < in.txt
 
-    
     //Merge sort
-    vector<int> test_merge = {37,-8,20,51,16,-4,9,-2,41,5,-12,33,18,7,-6,28,15,3,50,-9,22,11,13,26,35};
+    //vector<int> test_merge = {37,-8,20,51,16,-4,9,-2,41,5,-12,33,18,7,-6,28,15,3,50,-9,22,11,13,26,35};
+
+    ifstream infile("in.txt");  // Abrir el archivo de entrada
+
+    // if (!infile) {
+    //     cout << "Error al abrir el archivo." << endl;
+    //     return 1;
+    // }
+
+    int N;
+    infile >> N;  // Lee el primer numero que es N, el tamaño del vector
+    cout << "N: " << N << endl;
+
+    vector<double> test_merge(N);  // Crear un vector de tamaño N
+
+    for (int i = 0; i < N; i++) {
+        infile >> test_merge[i];  // Leer los numeros y almacenarlos en el vector
+        cout << test_merge[i] << " ";
+    }
+
+    cout << endl;
+
+    infile.close(); 
     
-    mergeSort(test_merge, 0, test_merge.size());
+    mergeSort(test_merge, 0, N-1);
     
     cout << "Merge Sort: ";
-    for (int i = 0; i< test_merge.size(); i++){
-        cout << test_merge[i] <<",";
+    for (int i = 0; i< N; i++){
+        cout << test_merge[i] <<" ";
     }
 
     cout << endl;
