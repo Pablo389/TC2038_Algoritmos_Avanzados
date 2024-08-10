@@ -65,7 +65,7 @@ void mergeSort(vector<double> &A, int p, int r){
 
 
 int main(){
-    //comando para compilar: g++ mergeSort.cpp -o a.out
+    //comando para compilar: g++ main.cpp -o a.out
     //comando para ejecutar: ./a.out o ./a.out < in.txt
 
     //Merge sort
@@ -100,6 +100,5 @@ int main(){
         cout << test_merge[i] <<" ";
     }
 
-    cout << endl;
     return 0;
 }
