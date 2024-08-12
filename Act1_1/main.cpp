@@ -23,8 +23,8 @@ void merge(vector<double> &A, int p, int q, int r){
     int i=0, j=0, k=p;
 
     while(i<n1 && j<n2){
-        if (L[i] <= R[j]){
-            A[k] = L[i];
+        if (L[i] >= R[j]){ // cuando l[i] es mayor o igual a R[j] significa que el valor          
+            A[k] = L[i];  //de L[i] es mayor y se coloca en la posicion k del vector A
             i++;
         }else{
             A[k] = R[j];
@@ -72,7 +72,7 @@ int main(){
     //vector<int> test_merge = {37,-8,20,51,16,-4,9,-2,41,5,-12,33,18,7,-6,28,15,3,50,-9,22,11,13,26,35};
 
     // ifstream infile("in.txt");  // Abrir el archivo de entrada
-    ifstream infile("three.txt");  // Abrir el archivo de entrada
+    ifstream infile("four.txt");  // Abrir el archivo de entrada
     // ifstream infile("three.txt");  // Abrir el archivo de entrada
 
     // if (!infile) {
