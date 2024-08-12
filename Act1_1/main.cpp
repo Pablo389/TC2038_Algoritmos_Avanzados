@@ -75,7 +75,7 @@ int main(){
     //ifstream infile("two.txt");  // Abrir el archivo de entrada
     // ifstream infile("three.txt");  // Abrir el archivo de entrada
     ifstream infile("four.txt");  // Abrir el archivo de entrada
-
+    
     // if (!infile) {
     //     cout << "Error al abrir el archivo." << endl;
     //     return 1;
