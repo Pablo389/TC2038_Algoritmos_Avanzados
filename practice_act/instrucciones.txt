@@ -1,0 +1,38 @@
+
+
+Instrucciones para compilar y ejecutar el programa
+
+Compilación: Para compilar el programa, abrir una terminal en Linux o wsl y ejecuta los siguientes comandos:
+
+g++ main.cpp -o a.out
+Este comando compilará el archivo main.cpp y generará un ejecutable llamado a.out.
+
+Ejecución: Para ejecutar el programa, usa el siguiente comando, sustituyendo <problema> por el nombre del problema que quieras ejecutar (SheepFence o TelecomTowers)
+, y <archivo_entrada.txt> por el nombre del archivo de entrada de prueba correspondiente.
+
+./a.out <problema> <archivo_entrada.txt>
+
+Ejemplo para ejecutar el caso de prueba test_s.txt:
+
+./a.out SheepFence test_s.txt
+
+Archivos de prueba: Los archivos de prueba (test_s.txt, test_t1.txt, test_t2.txt) están diseñados para verificar que el programa funcione correctamente en diferentes situaciones. A continuación se detallan los casos de prueba:
+
+Detalles de los casos de prueba
+
+test_t1.txt:
+Descripción: En este caso, se tiene un "triángulo" formado por torres. La cuarta torre interferirá con una de las torres del medio. Sin embargo, al aplicar el algoritmo, la torre que está en el medio debe ser marcada como eliminada, resultando en la eliminación de solo dos torres.
+Propósito: Verificar que el algoritmo maneja correctamente las interferencias entre las torres.
+
+test_t2.txt:
+Descripción: Este caso es similar al caso base de test_t1.txt, pero se agrega una torre en medio para asegurar que el algoritmo también elimine esta torre adicional correctamente.
+Propósito: Asegurar que el algoritmo puede manejar torres adicionales y las elimina como corresponde.
+
+test_s.txt:
+Primer caso de prueba:
+Entrada: 5 puntos donde tres están alineados en una diagonal: (0,0), (1,1), (2,2), (3,3). El otro punto está debajo de la línea: (1,-1).
+Propósito: Verificar que el algoritmo maneja correctamente los puntos alineados en una diagonal, descartando los puntos internos y seleccionando solo los puntos del perímetro. En este caso, se espera que el casco convexo sea formado por los puntos (0,0), (3,3) y (1,-1), formando un triángulo.
+
+Segundo caso de prueba:
+Entrada: 6 puntos formando un cuadrado con las coordenadas (0,0), (4,0), (4,4), (0,4), y dos puntos adicionales dentro del cuadrado: (2,2) y (2,3).
+Propósito: Verificar que el algoritmo selecciona correctamente los puntos del perímetro, ignorando los puntos internos. El casco convexo debe ser formado por los puntos del cuadrado, y el perímetro debe coincidir con el del cuadrado.
